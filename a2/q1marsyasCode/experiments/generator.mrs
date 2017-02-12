@@ -1,0 +1,1 @@
+Series { -> NoiseSource -> Gain{gain=0.1} -> AudioSink }

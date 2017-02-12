@@ -1,0 +1,34 @@
+Series {
+  -> input: SoundFileSource {filename="wav_files/qbhexamplesB.wav" inSamples = 1024}
+  
+  -> Fanout {
+	->Series{
+	  -> shift: ShiftInput {winSize = (2 * inSamples)}
+	  -> Windowing { type = "Hanning" }
+	  -> Spectrum
+	  -> PowerSpectrum  { spectrumType = "magnitude" }
+	  -> Peaker
+	  -> Selector
+	  -> MaxArgMax
+	  -> Accumulator
+      -> CsvSink { filename="accumulator.csv" }
+	  -> frequency: FlowToControl
+
+	 }
+	-> Series {
+		-> Fanout {
+		
+			-> Series {
+			  -> SineSource { frequency = (frequency/value * (israte / 2)) }
+			  -> Gain { gain = 0.1 }
+			}
+		
+			-> Gain { gain = 0.1 }
+
+        }
+        -> AudioSink
+	}
+  }
+
+  + done = (input/hasData == false)
+}

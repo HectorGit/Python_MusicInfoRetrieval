@@ -1,0 +1,5 @@
+Series {
+    -> SoundFileSource { filename = "wav_files/flutehighMono.wav" }
+	-> SoundFileSource { filename = "wav_files/outMelodyShorter.wav" }
+    -> AudioSink
+}

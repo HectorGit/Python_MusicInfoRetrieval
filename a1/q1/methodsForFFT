@@ -1,0 +1,84 @@
+def dftByHector(sign,inputSamples):
+
+		
+		#code a DFT from an input array of samples
+		#use for loops and no matrix multiplication.
+		
+		#1 amplitude and time (inputSamples) --- must keep separate from real_part_accumulator
+		signal = inputSamples;
+		k = len(signal); #this can change later. !!!! -----
+		
+		#2 a zero array of same length - here imaginary_part_accumulator
+		imaginary_part_accumulator = np.zeros(k,); #this should change to take k as the number of bins.
+																	#instead of number of samples in input. this way 
+																	# it would be not tied to the number of samples.
+		real_part_accumulator = np.zeros(k,);
+		real_part = np.zeros (k/2,);
+		imaginary_part = np.zeros (k/2,);														
+																	
+		print imaginary_part_accumulator.shape;
+		
+		#main idea:
+		#we can express e^-jwk as cos(w) + j sin(w) (EULER'S FORMULA)
+		#so in the convolution sum we can compute separately the 
+		#real part (cos(w) x (input)) AND add all those results into an N- long array
+		
+		#for sinusoid k 'correlate' by inner product (pointwise multiplication)
+			#phase shift the sinusoid by pi/2 to create cosine
+			#add result to bin  --- number of bins is k (can be different from N)
+			#will try to make it a parameter. (k is size of FFT.)
+			#to start, k (num bins) can be = N (number of samples) -> lots of computation!!!
+						
+		#determine Size of frequency bin in HZ.
+		#sizeOfBinInHertz = (sign.Fs/2)/k; #highest representable frequency/number of bins
+		sizeOfBinInHertz = (44100/2)/k;
+		#could also obtain this by dividing the sampling frequency over k??? -- THINK BETTER ABOUT THIS!!!
+		#why is this correct???
+						
+		for i in range (0,k):	
+			temp_cosine = Sinusoid(duration = sign.duration , freq = k*sizeOfBinInHertz , phase = np.pi/2);
+			real_part_accumulator[i] += signal[i] * temp_cosine.data[i]; #think about how to make it so that the size of 
+																	#the FFT is not equal to the size of the Input
+		
+		#in the end we can discard the spectrum for the 'negative' frequencies (symmetric)  (E.g. dibefore N/2)
+		real_part = real_part_accumulator[len(real_part_accumulator)/2:]; #from the half to the end.
+			
+		for i in range (0,k):
+			temp_sine = Sinusoid(duration = sign.duration , freq = k*sizeOfBinInHertz , phase = 0);
+			imaginary_part_accumulator[i] += signal[i] * temp_sine.data[i]; #think about how to make it so that the size of 
+																	#the FFT is not equal to the size of the Input
+			
+		imaginary_part = imaginary_part_accumulator[len(imaginary_part_accumulator)/2:]; #from the half to the end.
+		# the phase spectrum for negative frequencies can also be disregarded in the end (E.g. disregard before N/2)
+		# it's symmetric about the origin (antisymmetric)
+		
+		#--------------
+		return 0;
+		
+	def plotMagnitudeSpectrum(real_part_accumulator,imaginary_part_accumulator):
+		# the magnitude spectrum is already in the real part ARRAY
+		arr2 = real_part_accumulator;
+		arr1 = linspace(0,(signal.Fs)/2,k) #start --- stop  (highest reprs freq) --- number_of_points (size of fft)
+		
+		plt.plot(arr1,arr2);
+		plot.show();
+		return 0;
+
+	def plotPhaseSpectrum(real_part_accumulator,imaginary_part_accumulator):
+		# to obtain the phase for each bin, we need to take the arg (arctan2(imaginary/real)). (Use both arrays).
+		#make phase_spectrum a zero array of length N		
+		for i in range(0,k):
+			phase_spectrum = arctan2(imaginary_part_accumulator[i],real_part_accumulator[i]);
+		
+		arr2 = phase_spectrum;
+		arr1 = linspace(0, (signal.Fs)/2, k);
+		
+		plt.plot(arr1,arr2);
+		plt.show();
+		return 0;
+		
+		
+	def plotDFT(real_part_accumulator, imaginary_part_accumulator ):
+		plotMagnitudeSpectrum(real_part_accumulator, imaginary_part_accumulator);
+		plotPhaseSpectrum(real_part_accumulator,imaginary_part_accumulator);
+		return 0;	

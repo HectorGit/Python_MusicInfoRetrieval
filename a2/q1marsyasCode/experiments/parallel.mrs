@@ -1,0 +1,8 @@
+Series {
+  -> SoundFileSource { filename = "wav_files/outMelodyShorter.wav" }
+  -> Parallel {
+      -> DelaySamples { delay = 0 }
+      -> DelaySamples { delay = 100 }
+  }
+  -> AudioSink
+}

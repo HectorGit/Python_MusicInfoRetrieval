@@ -1,0 +1,6 @@
+Series {
+  -> input : SoundFileSource { filename = "wav_files/outMelodyShorter.wav" }
+  -> Energy
+  -> CsvSink { filename="result.csv" }
+  + done = (input/hasData == false)
+}

@@ -1,0 +1,6 @@
+Series {
+  -> SineSource -> Gain {gain=10.0}
+  -> Clip -> OnePole {alpha = 0.5}
+  -> Gain {gain = 0.04}
+  -> AudioSink
+}

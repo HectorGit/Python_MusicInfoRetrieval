@@ -1,0 +1,4 @@
+Series {
+    -> AudioSource
+    -> SoundFileSink { filename = "recording.wav" }
+}
