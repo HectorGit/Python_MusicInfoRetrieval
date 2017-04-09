@@ -6,17 +6,38 @@ import struct
 import matplotlib.pyplot as plt
 
 def windowSignal(signal,windowingFunction):
-		sizeOfSignal = len(signal.data);
-		for i in range (0, sizeOfSignal):
-			signal.data[i] = signal.data[i]*windowingFunction[np.mod(i, len(windowingFunction))];
+		numberOfWindows = int(len(signal.data)/len(windowingFunction));
+		windowSize = len(windowingFunction);
+		for i in range (0, numberOfWindows):
+			currentSamples = signal.data[:windowSize];
+			signal.data[:windowSize] = np.multiply(currentSamples,windowingFunction);
 			
 def plotMagnitudeSpectrum(signal,sizeOfFFT):		
-	freq = np.fft.fft(signal.data,sizeOfFFT)/len(signal.data)*1.0; #normalized by N
-	real_part = np.real(freq);
-	imag_part = np.imag(freq);
-	magn_spectrum = np.abs(real_part,imag_part);
-	lin_space = np.linspace(0,(44100)/2,sizeOfFFT/2);#sizeOfFFT/2); #same linspace to possibly obtain same plot.
+	freq = np.fft.fft(signal.data,sizeOfFFT)/len(signal.data);
+	magn_spectrum = np.abs(freq);
+	#loudest = np.amax(magn_spectrum);
+	magn_spectrum = 20*np.log10(magn_spectrum);
+	lin_space = np.linspace(0,sizeOfFFT/2,sizeOfFFT/2);
 	plt.ylabel('Amplitude in dB');
-	plt.xlabel('Frequency in Hz')
-	plt.title('MagnitudeSpectrum');
-	plt.stem(lin_space, magn_spectrum[:sizeOfFFT/2],'r'); #magn_spectrum[:sizeOfFFT/2],'r');
+	plt.xlabel('Frequency bin')
+	#plt.title('MagnitudeSpectrum');
+	plt.plot(lin_space, magn_spectrum[:sizeOfFFT/2],'r'); 
+	plt.show();
+	
+def plotMagnitudeSpectrumReduced(signal,sizeOfFFT):		
+	freq = np.fft.fft(signal.data[:2048],sizeOfFFT)/2048;
+	magn_spectrum = np.abs(freq);
+	#loudest = np.amax(magn_spectrum);
+	magn_spectrum = 20*np.log10(magn_spectrum);
+	lin_space = np.linspace(0,sizeOfFFT/2,sizeOfFFT/2);
+	plt.ylabel('Amplitude in dB');
+	plt.xlabel('Frequency bin')
+	#plt.title('MagnitudeSpectrum');
+	plt.plot(lin_space, magn_spectrum[:sizeOfFFT/2],'r'); 
+	plt.show();	
+	
+def plotWindowedAndNonWindowed(signal,sizeOfFFT,hanningWindow):
+	plotMagnitudeSpectrum(signal,sizeOfFFT);
+		
+	windowSignal(signal,hanningWindow);
+	plotMagnitudeSpectrum(signal,sizeOfFFT);

@@ -28,8 +28,7 @@ class ClosestBins():
 		
 		Fs = 44100.0;
 		
-		numSamplesPerCycle1 = (Fs*lengthOfCycle1); #since we sample 44100 times per 1 second, we sample x times for 0.002 seconds
-		#   44100/1 = x/0.002 =>  x = (44100/1)(0.002) = 44100 * lengthOfCycle ~about 88 samples.;
+		numSamplesPerCycle1 = (Fs*lengthOfCycle1); 
 		numSamplesPerCycle2 = (Fs*lengthOfCycle2);
 							
 		arr1 = np.linspace(0.0,lengthOfCycle1,numSamplesPerCycle1);	#start,stop,n
@@ -42,7 +41,6 @@ class ClosestBins():
 		plt.ylabel('Amplitude');
 		plt.xlabel('Time');
 		plt.plot(arr1,arr2);
-		
 		plt.show();
 		
 		arr3 = np.linspace(0.0,lengthOfCycle2,numSamplesPerCycle2);	#start,stop,n
@@ -55,7 +53,6 @@ class ClosestBins():
 		plt.ylabel('Amplitude');
 		plt.xlabel('Time');
 		plt.plot(arr3,arr4);
-
 		plt.show();
 		
 		return 0;

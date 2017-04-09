@@ -1,0 +1,7 @@
+ Neil P. McAngus Todd and Guy Brown, "Visualization of Rhythm, Time and
+Meter," Artificial Intelligence Review pp. 99-119, No. 10, 1996. 
+
+[6] Eric D. Scheirer, "Tempo and beat analysis of acoustic musical signals," J.
+Aeoast. Soc. Am pp. 588-601, Val 103, No. 1, January 1998. 
+
+-------------------

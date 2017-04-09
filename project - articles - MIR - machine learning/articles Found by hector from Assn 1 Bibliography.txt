@@ -1,0 +1,132 @@
+[3] P.E. Allen and R.B. Dannenberg. Tracking musical beats in real time. In
+Proceedings of the International Computer Music Conference, pages 140–143,
+1990.
+
+http://dblp.org/rec/conf/icmc/AllenD90
+http://quod.lib.umich.edu/i/icmc/bbp2372.1990.036/1 < Actual Article
+
+
+----------------------------------------------------------------------------------------------------------
+
+[10] E. Cambouropoulos. Musical rhythm: a formal model for determining local
+boundaries. In E. Leman, editor, Music, Gestalt and Computing, pages
+277–293. Springer-Verlag, Berlin, DE, 1997
+
+http://dblp.uni-trier.de/search?q=Musical+rhythm%3A+a+formal+model+for+determining+local+boundaries
+http://link.springer.com/chapter/10.1007%2FBFb0034121
+
+----------------------------------------------------------------------------------------------------------
+
+[14] M. Clausen, R. Engelbrecht, D. Meyer, and J. Schmitz. PROMS: a web-based
+tool for searching in polyphonic music. In Proceedings of the International
+Symposium of Music Information Retrieval, 2000.
+
+http://dblp.uni-trier.de/search?q=PROMS%3A+a+web-based+tool+for+searching+in+polyphonic+music.
+http://ismir2000.ismir.net/papers/clausen_abs.pdf
+
+----------------------------------------------------------------------------------------------------------
+
+[16] R.B. Dannenberg and H. Mukaino. New techniques for enhanced quality
+of computer accompaniment. In Proceedings of the International Computer
+Music Conference, pages 243–249, 1988.
+
+http://dblp.uni-trier.de/rec/html/conf/icmc/DannenbergM88
+http://quod.lib.umich.edu/i/icmc/bbp2372.1988.027/1
+----------------------------------------------------------------------------------------------------------
+
+
+[17] M.E.P. Davies and M.D. Plumbley. Casual tempo tracking of audio. In Proceedings
+of the International Conference on Music Information Retrieval,
+pages 164–169, 2004.
+
+NOT FOUND. articles by same authors -> http://dblp.uni-trier.de/search/publs?q=Davies%20and%20M.D.%20Plumbley. 
+
+----------------------------------------------------------------------------------------------------------
+
+[21] S. Doraisamy and S. R¨uger. A polyphonic music retrieval system using Ngrams.
+In Proceedings of the International Conference on Music Information
+Retrieval, pages 204–209, 2004.
+
+articles by the same author. -> http://dblp.uni-trier.de/search/publ?q=Doraisamy%20author%3AShyamala_C._Doraisamy%3A
+http://ismir2004.ismir.net/proceedings/p039-page-204-paper230.pdf <- Correct article
+
+----------------------------------------------------------------------------------------------------------
+
+
+[22] W.J. Dowling. Scale and contour: two components of a theory of memory for
+melodies. Psychological Review, 85(4):341–354, 1978.
+
+NOT FOUND
+
+----------------------------------------------------------------------------------------------------------
+
+[31] T. Fujishima. Realtime chord recognition of musical sound: a system using
+common lisp Music. In Proceedings of the International Computer Music Conference,
+pages 464–467, 1999.
+
+http://dblp.uni-trier.de/search/publ?q=Realtime%20chord%20recognition%20of%20musical%20sound%3A%20a%20system%20using%20common%20lisp%20Music
+http://quod.lib.umich.edu/i/icmc/bbp2372.1999.446/1
+
+----------------------------------------------------------------------------------------------------------
+
+[35] E. G´omez and P. Herrera. Estimating the tonality of polyphonic audio files:
+cognitive versus machine learning modelling strategies. In Proceedings of the
+International Conference on Music Information Retrieval, pages 92–95, 2004.
+
+http://dblp.uni-trier.de/search/publ?q=Estimating%20the%20tonality%20of%20polyphonic%20audio%20files
+http://ismir2004.ismir.net/proceedings/p018-page-92-paper164.pdf
+
+----------------------------------------------------------------------------------------------------------
+
+
+[37] M. Goto and Y. Muraoka. An audio-based real-time beat tracking system and
+its applications. In Proceedings of the International Computer Music Conference,
+pages 17–20, 1998.
+
+http://dblp.uni-trier.de/rec/html/conf/icmc/GotoM98
+http://hdl.handle.net/2027/spo.bbp2372.1998.250
+
+----------------------------------------------------------------------------------------------------------
+
+
+[43] Harmonica. Accompanying action on music information in libraries, July 2006.
+http://projects.fnb.nl/harmonica/.
+
+NOT FOUND
+
+----------------------------------------------------------------------------------------------------------
+
+
+[110] G. Peeters. Rhythm classification using spectral rhythm patterns. In Proceedings
+of the International Conference on Music Information Retrieval, pages
+644–647, 2005.
+
+http://dblp.uni-trier.de/search?q=Rhythm+classification+using+spectral+rhythm+patterns.
+http://ismir2005.ismir.net/proceedings/2076.pdf
+
+----------------------------------------------------------------------------------------------------------
+
+
+[111] J. Pickens and T. Crawford. Harmonic models for polyphonic music retrieval.
+In Proceedings of the International Conference on Information and Knowledge
+Management, pages 430–437, 2002.
+
+http://dblp.uni-trier.de/search?q=Harmonic%20models%20for%20polyphonic%20music%20retrieval
+http://dl.acm.org/citation.cfm?doid=584792.584863
+
+----------------------------------------------------------------------------------------------------------
+
+
+[115] A. Pikrakis, I. Antonopoulos, and S. Theodoris. Music meter and tempo tracking
+from raw polyphonic audio. In Proceedings of the International Conference
+on Music Information Retrieval, pages 192–197, 2004.
+
+http://dblp.uni-trier.de/rec/html/conf/ismir/PikrakisAT04
+http://ismir2004.ismir.net/proceedings/p037-page-192-paper160.pdf
+
+----------------------------------------------------------------------------------------------------------
+
+
+
+
+

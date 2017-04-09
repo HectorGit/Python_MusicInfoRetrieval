@@ -4,78 +4,78 @@ import wave
 import os
 import struct
 import matplotlib.pyplot as plt
-#import matplotlib.axes as ax
 
+def dftByHector(sizeOfFFT,sign,sizeOfBin):	
 
-def dftByHector(factor,numberOfBins,sign,inputSamples):
+	re_in = sign.data;
+	n = len(re_in);	
+	re_out = np.zeros(sizeOfFFT,);
+	im_out = np.zeros(sizeOfFFT,);	
 	
-	re_in = inputSamples;
-	im_in = np.zeros(len(inputSamples),);
-
-	real_part = np.zeros (numberOfBins,);
-	imaginary_part = np.zeros (numberOfBins,);		
-											
-	sizeOfBinInHertz = (44100/2)/float(numberOfBins); 
-	print 'sizeOfBinInHertz'
-	print sizeOfBinInHertz;
-					
-	for i in range (0,numberOfBins):	
-		
-		temp_cosine = mir.Sinusoid(duration = sign.duration, freq = i*sizeOfBinInHertz , phase = np.pi/2); 
-		                                                                                                   
-		temp_sine = mir.Sinusoid(duration = sign.duration, freq = i*sizeOfBinInHertz , phase = 0);         
-		
-		#found reference at https://www.nayuki.io/page/how-to-implement-the-discrete-fourier-transform
-		
-		for j in range (0,len(inputSamples)): 
-			real_part[i] += (re_in[j] * temp_cosine.data[j]) + (im_in[j] * temp_sine.data[j]); #calculates the sum per bin k
-			imaginary_part[i] += (-1 * re_in[j] * temp_sine.data[j]) + (im_in[j] * temp_cosine.data[j]);
-		
-	plotDFT(factor,numberOfBins, sign,real_part,imaginary_part);
+	for k in range(0,sizeOfFFT):
+		sumReal = 0;
+		sumImag = 0;
+		for t in range(0,n):
+			angle = float(2.0*np.pi*(t*k)/sizeOfFFT);
+			sumReal += re_in[t] * np.cos(angle);
+			sumImag += re_in[t] * np.sin(angle);
+		re_out[k] = sumReal;
+		im_out[k] = sumImag;
 	
-	#--------------
+	non_Aliasing_Points = sizeOfFFT/2;	
+	plotDFT(non_Aliasing_Points, sign,re_out,im_out);
 	return 0;
 		
-def plotMagnitudeSpectrum(factor,numberOfBins, sign,real_part,imaginary_part):
-			
-	magnitude_spectrum = np.zeros (numberOfBins,);														
-
-	for i in range(0,numberOfBins):
-		magnitude_spectrum[i] = np.sqrt(imaginary_part[i]**2+real_part[i]**2);		
-		magnitude_spectrum[i] = magnitude_spectrum[i]/(len(sign.data));
-	
+def plotMagnitudeSpectrum(non_Aliasing_Points, sign,re_out,im_out):	
+	magnitude_spectrum = np.zeros(non_Aliasing_Points,);														
+	print len(magnitude_spectrum);
+	for i in range(0,non_Aliasing_Points):
+		magnitude_spectrum[i] = np.sqrt(im_out[i]**2+re_out[i]**2);		
 	arr2 = magnitude_spectrum;
-	
-	#arr1 = np.linspace(0,(44100)/2,numberOfBins);
-	arr1 = np.linspace(0,numberOfBins,numberOfBins); 
-
-	plt.ylabel('Amplitude in dB');
-	plt.xlabel('Frequency Bin(mult by 100Hz)')
+	arr1 = np.linspace(0,non_Aliasing_Points,non_Aliasing_Points); 
+	plt.ylabel('Amplitude');
+	plt.xlabel('Frequency Bin')
 	plt.title('MagnitudeSpectrum');
-	plt.stem(arr1,arr2);
+	plt.plot(arr1,arr2);
 	return 0;
 
-def plotPhaseSpectrum(factor,numberOfBins, sign,real_part,imaginary_part):
-	phase_spectrum = np.zeros (numberOfBins,);														
-	
-	for i in range (0,numberOfBins):
-		phase_spectrum[i] = np.arctan2(imaginary_part[i],real_part[i]);	
-			
+def plotPhaseSpectrum(non_Aliasing_Points, sign,re_out,im_out):
+	phase_spectrum = np.zeros(non_Aliasing_Points,);	
+	for i in range (0,non_Aliasing_Points):
+		phase_spectrum[i] = np.arctan2(im_out[i],re_out[i]);				
 	arr4 = phase_spectrum;
-	#arr3 = np.linspace(0,(44100)/2,numberOfBins); 
-	arr3 = np.linspace(0,numberOfBins,numberOfBins); 
-
-
+	arr3 = np.linspace(0,non_Aliasing_Points,non_Aliasing_Points); 
 	plt.title('PhaseSpectrum');
-	plt.ylabel('Phase in Radians');
-	plt.xlabel('Frequency Bin (mult by 100 Hz)');
-	plt.stem(arr3,arr4);
+	plt.ylabel('Phase');
+	plt.xlabel('Frequency Bin');
+	plt.plot(arr3,arr4);
 	return 0;
 	
-	
-def plotDFT(factor,numberOfBins,sign,real_part, imaginary_part):
-	#plotMagnitudeSpectrum(factor,numberOfBins,sign,real_part, imaginary_part);
-	print 'Yo printing stuff'
-	plotPhaseSpectrum(factor,numberOfBins,sign,real_part,imaginary_part);
+def plotDFT(non_Aliasing_Points,sign,real_part, imaginary_part):
+	plotMagnitudeSpectrum(non_Aliasing_Points,sign,real_part, imaginary_part);
+	plt.show();
+	plotPhaseSpectrum(non_Aliasing_Points,sign,real_part,imaginary_part);
 	plt.show();
 	return 0;	
+
+def plotWithLibraryFFT(sizeOfFFT, sign):
+	non_Aliasing_Points = sizeOfFFT/2;
+	freq = np.fft.fft(sign.data,sizeOfFFT)/len(sign.data);
+	real_part = np.real(freq);
+	imag_part = np.imag(freq);
+	magn_spectrum = np.absolute(freq);
+	phase_spectrum = np.zeros(non_Aliasing_Points,);
+	for i in range (0,non_Aliasing_Points):
+		phase_spectrum[i] = np.arctan2(imag_part[i],real_part[i]);
+	lin_space = np.linspace(0,non_Aliasing_Points,non_Aliasing_Points);
+	plt.title('Magnitude Response - LIBRARY');
+	plt.ylabel('Magnitude');
+	plt.xlabel('Frequency bin');
+	plt.plot(lin_space, magn_spectrum[:non_Aliasing_Points],'r');
+	plt.show();
+	plt.title('Phase Response - LIBRARY');
+	plt.ylabel('Phase');
+	plt.xlabel('Frequency bin');
+	plt.plot(lin_space, phase_spectrum[:non_Aliasing_Points],'r');
+	plt.show();
+	

@@ -1,0 +1,35 @@
+{
+"file_metadata": {
+  "jams_version": "0.2.0",
+  "identifiers": { "filename": "turca.wav" },
+  "duration": 193.462857142
+},
+"annotations": [
+{
+  "namespace": "unknown",
+  "annotation_metadata": {
+    "annotation_tools": "Sonic Annotator v1.4",
+    "data_source": "Automatic feature extraction",
+    "annotator": {
+      "plugin_id": "vamp:segmentino:segmentino",
+      "output_id": "segmentation",
+      "plugin_version": "2",
+      "step_size": 512,
+      "block_size": 16384,
+      "sample_rate": 44100,
+      "transform_id": "vamp:segmentino:segmentino:segmentation"
+    }
+  },
+  "data": [
+    { "time": 0.000000000, "duration": 0.406349206, "confidence": 1.0, "label": "N1", "value": 0 },
+    { "time": 0.406349206, "duration": 60.894331066, "confidence": 1.0, "label": "A", "value": 1 },
+    { "time": 61.300680272, "duration": 7.209795918, "confidence": 1.0, "label": "N2", "value": 0 },
+    { "time": 68.510476190, "duration": 13.560453515, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 82.070929705, "duration": 13.688163265, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 95.759092970, "duration": 13.560453515, "confidence": 1.0, "label": "N3", "value": 0 },
+    { "time": 109.319546485, "duration": 60.638911564, "confidence": 1.0, "label": "A", "value": 1 },
+    { "time": 169.958458049, "duration": 22.709115647, "confidence": 1.0, "label": "N4", "value": 0 }
+  ]
+}
+]
+}

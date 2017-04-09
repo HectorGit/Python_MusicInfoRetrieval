@@ -1,0 +1,52 @@
+{
+"file_metadata": {
+  "jams_version": "0.2.0",
+  "identifiers": { "filename": "gloria.wav" },
+  "duration": 161.044897959
+},
+"annotations": [
+{
+  "namespace": "unknown",
+  "annotation_metadata": {
+    "annotation_tools": "Sonic Annotator v1.4",
+    "data_source": "Automatic feature extraction",
+    "annotator": {
+      "plugin_id": "vamp:qm-vamp-plugins:qm-segmenter",
+      "output_id": "segmentation",
+      "plugin_version": "3",
+      "step_size": 8820,
+      "block_size": 26460,
+      "sample_rate": 44100,
+      "parameters": {
+        "featureType": 1,
+        "nSegmentTypes": 10,
+        "neighbourhoodLimit": 4
+      },
+      "transform_id": "vamp:qm-vamp-plugins:qm-segmenter:segmentation"
+    }
+  },
+  "data": [
+    { "time": 0.000000000, "duration": 14.200000000, "confidence": 1.0, "label": "A", "value": 1 },
+    { "time": 14.200000000, "duration": 6.800000000, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 21.000000000, "duration": 10.400000000, "confidence": 1.0, "label": "C", "value": 3 },
+    { "time": 31.400000000, "duration": 6.800000000, "confidence": 1.0, "label": "D", "value": 4 },
+    { "time": 38.200000000, "duration": 7.200000000, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 45.400000000, "duration": 5.400000000, "confidence": 1.0, "label": "E", "value": 5 },
+    { "time": 50.800000000, "duration": 8.000000000, "confidence": 1.0, "label": "F", "value": 6 },
+    { "time": 58.800000000, "duration": 7.600000000, "confidence": 1.0, "label": "G", "value": 7 },
+    { "time": 66.400000000, "duration": 6.800000000, "confidence": 1.0, "label": "H", "value": 8 },
+    { "time": 73.200000000, "duration": 8.200000000, "confidence": 1.0, "label": "I", "value": 9 },
+    { "time": 81.400000000, "duration": 9.400000000, "confidence": 1.0, "label": "J", "value": 10 },
+    { "time": 90.800000000, "duration": 7.400000000, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 98.200000000, "duration": 5.400000000, "confidence": 1.0, "label": "E", "value": 5 },
+    { "time": 103.600000000, "duration": 8.000000000, "confidence": 1.0, "label": "F", "value": 6 },
+    { "time": 111.600000000, "duration": 7.600000000, "confidence": 1.0, "label": "G", "value": 7 },
+    { "time": 119.200000000, "duration": 6.800000000, "confidence": 1.0, "label": "H", "value": 8 },
+    { "time": 126.000000000, "duration": 8.200000000, "confidence": 1.0, "label": "I", "value": 9 },
+    { "time": 134.200000000, "duration": 8.400000000, "confidence": 1.0, "label": "J", "value": 10 },
+    { "time": 142.600000000, "duration": 13.600000000, "confidence": 1.0, "label": "I", "value": 9 },
+    { "time": 156.200000000, "duration": 4.400000000, "confidence": 1.0, "label": "A", "value": 1 }
+  ]
+}
+]
+}

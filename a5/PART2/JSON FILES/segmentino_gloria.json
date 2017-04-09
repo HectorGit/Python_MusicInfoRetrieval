@@ -1,0 +1,31 @@
+{
+"file_metadata": {
+  "jams_version": "0.2.0",
+  "identifiers": { "filename": "gloria.wav" },
+  "duration": 161.044897959
+},
+"annotations": [
+{
+  "namespace": "unknown",
+  "annotation_metadata": {
+    "annotation_tools": "Sonic Annotator v1.4",
+    "data_source": "Automatic feature extraction",
+    "annotator": {
+      "plugin_id": "vamp:segmentino:segmentino",
+      "output_id": "segmentation",
+      "plugin_version": "2",
+      "step_size": 512,
+      "block_size": 16384,
+      "sample_rate": 44100,
+      "transform_id": "vamp:segmentino:segmentino:segmentation"
+    }
+  },
+  "data": [
+    { "time": 0.000000000, "duration": 36.594648526, "confidence": 1.0, "label": "N1", "value": 0 },
+    { "time": 36.594648526, "duration": 53.150476190, "confidence": 1.0, "label": "A", "value": 1 },
+    { "time": 89.745124716, "duration": 51.281269841, "confidence": 1.0, "label": "A", "value": 1 },
+    { "time": 141.026394557, "duration": 19.110022676, "confidence": 1.0, "label": "N3", "value": 0 }
+  ]
+}
+]
+}

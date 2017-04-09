@@ -1,0 +1,3 @@
+C:\Users\Owner\Anaconda2
+C:\Users\Owner\Anaconda2\Scripts
+C:\Users\Owner\Anaconda2\Library\bin

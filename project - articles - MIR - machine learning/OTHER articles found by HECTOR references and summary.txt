@@ -1,0 +1,123 @@
+Bozena Kostek, Jaroslaw Wójcik:
+Machine learning system for estimating the rhythmic salience of sounds. KES Journal 9(4): 275-284 (2005)
+
+http://dblp.uni-trier.de/rec/html/journals/kes/KostekW05
+http://content.iospress.com/articles/international-journal-of-knowledge-based-and-intelligent-engineering-systems/kes00048
+
+Abstract: This article describes experimental work carried out in attempt to improve the effectiveness of musical rhythm retrieval systems. The authors define basic notions in the area of hierarchical rhythm retrieval and describe a procedure for inducing rhythmic hypotheses in a given melody. Utilizing an approach commonly used in the data mining domain, an association rule model has been applied to estimate the rhythmic salience of sounds based on the physical attributes of duration, frequency and amplitude. On the basis of the knowledge obtained by the machine learning system, the authors propose five functions to rank sounds according to their tendency to be located in accented positions in a melody. Adapted precision and recall measures were used to validate the proposed functions and conduct experimental verification. Conclusions derived from the results of the experiments have also been presented.
+
+--------------------------------------------------------------------------------
+
+Masoud Alghoniemy, Ahmed H. Tewfik:
+Rhythm and periodicity detection in polyphonic music. MMSP 1999: 185-190
+
+http://dblp.uni-trier.de/search/publ?q=rhythm%20detection%20music
+http://ieeexplore.ieee.org/document/793818/?reload=true
+
+Abstract: We describe a novel approach for detecting perfect and imperfect periodicities in polyphonic music. The approach relies on beat and rhythm information extracted from the raw data after low-pass filtering. The beat and rhythm information is analyzed with a binary tree or trellis tree parsing depending on the length of the pauses in the underlying signal. This analysis yields accurate periodicity patterns at macro and micro scales. We illustrate the effectiveness of our approach using music segments from various cultures and explain its use in music classification and content-based retrieval.
+
+--------------------------------------------------------------------------------
+
+Robert Harper, M. Ed Jernigan:
+Self-adjusting beat detection and prediction in music. ICASSP (4) 2004: 245-248
+
+http://dblp.uni-trier.de/search/publ?q=beat%20detection%20music
+http://ieeexplore.ieee.org/document/1326809/
+
+Abs: This paper proposes a new approach to beat detection and prediction in music. Recurrent timing networks are used to detect and predict periodicities in an onset stream and are contained within nodes that compete for selection as the best beat hypothesis. Beat prediction nodes perform period self adjustment to better represent the detected music beat period. The system is tested using a variety of music from different genres and shows promise, in many cases with high correct beat detection percentages.
+
+--------------------------------------------------------------------------------
+
+Masataka Goto, Yoichi Muraoka:
+Real-time beat tracking for drumless audio signals: Chord change detection for musical decisions. Speech Communication 27(3-4): 311-335 (1999)
+
+This paper describes a real-time beat-tracking system that detects a hierarchical beat structure in musical audio signals without drum-sounds. Most previous systems have dealt with MIDI signals and had difficulty in applying, in real time, musical heuristics to audio signals containing sounds of various instruments and in tracking beats above the quarter-note level. Our system not only tracks beats at the quarter-note level but also detects beat structure at the half-note and measure levels. To make musical decisions about the audio signals, we propose a method of detecting chord changes that does not require chord names to be identified. The method enables the system to track beats at different rhythmic levels – for example, to find the beginnings of half notes and measures – and to select the best of various hypotheses about beat positions. Experimental results show that the proposed method was effective to detect the beat structure in real-world audio signals sampled from compact discs of popular music.
+
+http://dblp.uni-trier.de/search/publ?q=beat%20detection%20music
+http://www.sciencedirect.com/science/article/pii/S0167639398000764
+
+--------------------------------------------------------------------------------
+
+http://dblp.uni-trier.de/search/publs?q=tonality
+
+Armin Taghipour, Bharadwaj Desikan, Bernd Edler:
+Envelope analysis methods for tonality estimation. EUSIPCO 2016: 1148-1152
+http://ieeexplore.ieee.org/document/7760428/
+
+In perceptual audio coders, the audio signal masks the quantization noise. The masking effectiveness depends on the degree of tonality/noisiness of the signal. Hence, in psychoacoustic models (PM) of perceptual coders, the level of the estimated masking thresholds can be adjusted by tonality estimation methods. This paper introduces three envelope analysis methods for tonality estimation: optimized amplitude modulation ratio (AM-R), auditory image correlation, and temporal envelope rate. The methods were implemented in a filter bank-based PM. In a subjective quality test, they were compared to each other and to another existing method, partial spectral flatness measure (PSFM). The PSFM and the AM-R were rated significantly higher than the other methods.
+
+---------------------------------------------------------------------------------
+
+Katy C. Noland:
+Computational tonality estimation : signal processing and hidden Markov models. Queen Mary University of London, UK 2009
+
+https://qmro.qmul.ac.uk/jspui/handle/123456789/8492
+
+Seems good!
+---------------------------------------------------------------------------------
+
+D. V. Lande:
+Identification of information tonality based on Bayesian approach and neural networks. CoRR abs/0806.2738 (2008)
+
+https://arxiv.org/abs/0806.2738
+
+A model of the identification of information tonality, based on Bayesian approach and neural networks was described. In the context of this paper tonality means positive or negative tone of both the whole information and its parts which are related to particular concepts. The method, its application is presented in the paper, is based on statistic regularities connected with the presence of definite lexemes in the texts. A distinctive feature of the method is its simplicity and versatility. At present ideologically similar approaches are widely used to control spam.
+
+---------------------------------------------------------------------------------
+
+David Rizo, José Manuel Iñesta Quereda, Pedro J. Ponce de León:
+Tree Model of Symbolic Music for Tonality Guessing. Artificial Intelligence and Applications 2006: 299-304
+
+NO DOCUMENT AVAILABLE???
+
+---------------------------------------------------------------------------------
+
+Niall John Lee Griffith:
+Modelling the acquisition and representation of musical tonality as a function of pitch-use through self-organising artificial neural networks. University of Exeter, UK 1993
+
+http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.385749
+
+No Abstract Available ->> Is article up???
+---------------------------------------------------------------------------------
+DIFF
+http://dblp.uni-trier.de/search/publs?q=polyphonic%20pitch
+
+Ali Taylan Cemgil:
+Polyphonic Pitch Identification and Bayesian Inference. ICMC 2004
+http://quod.lib.umich.edu/i/icmc/bbp2372.2004.039/1
+looks good!
+---------------------------------------------------------------------------------
+
+Matthias Varewyck, Johan Pauwels, Jean-Pierre Martens:
+A novel chroma representation of polyphonic music based on multiple pitch tracking techniques. ACM Multimedia 2008: 667-670
+
+http://dl.acm.org/citation.cfm?doid=1459359.1459455
+
+It is common practice to map the frequency content of music onto a chroma representation, but there exist many different schemes for constructing such a representation. In this paper, a new scheme is proposed. It comprises a detection of salient frequencies, a conversion of salient frequencies to notes, a psychophysically motivated weighting of harmonics in support of a note, a restriction of harmonic relations between different notes and a restriction of the deviations from a predefined pitch scale (e.g. the equally tempered western scale). A large-scale experimental evaluation has confirmed that the novel chroma representation more closely matches manual chord labels than the representations generated by six other tested schemes. Therefore, the new chroma representation is expected to improve applications such as song similarity matching and chord detection and labeling.
+
+---------------------------------------------------------------------------------
+
+Stanislaw Andrzej Raczynski, Emmanuel Vincent, Shigeki Sagayama:
+Dynamic Bayesian Networks for Symbolic Polyphonic Pitch Modeling. IEEE Trans. Audio, Speech & Language Processing 21(9): 1830-1840 (2013)
+
+http://ieeexplore.ieee.org/document/6502207/
+
+Symbolic pitch modeling is a way of incorporating knowledge about relations between pitches into the process of analyzing musical information or signals. In this paper, we propose a family of probabilistic symbolic polyphonic pitch models, which account for both the “horizontal” and the “vertical” pitch structure. These models are formulated as linear or log-linear interpolations of up to five sub-models, each of which is responsible for modeling a different type of relation. The ability of the models to predict symbolic pitch data is evaluated in terms of their cross-entropy, and of a newly proposed “contextual cross-entropy” measure. Their performance is then measured on synthesized polyphonic audio signals in terms of the accuracy of multiple pitch estimation in combination with a Nonnegative Matrix Factorization-based acoustic model. In both experiments, the log-linear combination of at least one “vertical” (e.g., harmony) and one “horizontal” (e.g., note duration) sub-model outperformed a pitch-dependent Bernoulli prior by more than 60% in relative cross-entropy and 3% in absolute multiple pitch estimation accuracy. This work provides a proof of concept of the usefulness of model interpolation, which may be used for improved symbolic modeling of other aspects of music in the future.
+---------------------------------------------------------------------------------
+
+Ying Hu, Guizhong Liu:
+Instrument identification and pitch estimation in multi-timbre polyphonic musical signals based on probabilistic mixture model decomposition. J. Intell. Inf. Syst. 40(1): 141-158 (2013)
+
+http://link.springer.com/article/10.1007%2Fs10844-012-0220-9
+
+
+In this paper, we propose a method based on probabilistic mixture model decomposition that can simultaneously identify musical instrument types, estimate pitches and assign each pitch to its source instrument in monaural polyphonic audio containing multiple sources. In the proposed system, the probability density function (PDF) of the observed mixture note is treated as a weighted sum approximation of all possible note models. These note models, covering 14 instruments and all their possible pitches, describe their dynamic frequency envelopes in terms of probability. The weight coefficients, indicating the probabilities of the existence of pitches of a certain type of instrument, are estimated using the Expectation-Maximization (EM) algorithm. The weight coefficients are used to detect the types of source instruments and the pitches. The results of experiments involving 14 instruments within a designated pitch range F3–F6 (37 pitches) demonstrate a good discrimination capability, especially in instrument identification and instrument-pitch identification. For the entire system including the note onset detection tool, using quartet polyphonic recordings, the average F-measure values of instrument-pitch identification, instrument identification and pitch estimation were 55.4, 62.5 and 86 % respectively.
+
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+

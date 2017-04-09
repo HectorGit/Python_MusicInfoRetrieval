@@ -1,0 +1,51 @@
+{
+"file_metadata": {
+  "jams_version": "0.2.0",
+  "identifiers": { "filename": "turca.wav" },
+  "duration": 193.462857142
+},
+"annotations": [
+{
+  "namespace": "unknown",
+  "annotation_metadata": {
+    "annotation_tools": "Sonic Annotator v1.4",
+    "data_source": "Automatic feature extraction",
+    "annotator": {
+      "plugin_id": "vamp:qm-vamp-plugins:qm-segmenter",
+      "output_id": "segmentation",
+      "plugin_version": "3",
+      "step_size": 8820,
+      "block_size": 26460,
+      "sample_rate": 44100,
+      "parameters": {
+        "featureType": 1,
+        "nSegmentTypes": 10,
+        "neighbourhoodLimit": 4
+      },
+      "transform_id": "vamp:qm-vamp-plugins:qm-segmenter:segmentation"
+    }
+  },
+  "data": [
+    { "time": 0.000000000, "duration": 13.000000000, "confidence": 1.0, "label": "A", "value": 1 },
+    { "time": 13.000000000, "duration": 8.200000000, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 21.200000000, "duration": 5.000000000, "confidence": 1.0, "label": "C", "value": 3 },
+    { "time": 26.200000000, "duration": 8.600000000, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 34.800000000, "duration": 5.600000000, "confidence": 1.0, "label": "C", "value": 3 },
+    { "time": 40.400000000, "duration": 14.000000000, "confidence": 1.0, "label": "D", "value": 4 },
+    { "time": 54.400000000, "duration": 12.400000000, "confidence": 1.0, "label": "E", "value": 5 },
+    { "time": 66.800000000, "duration": 8.000000000, "confidence": 1.0, "label": "F", "value": 6 },
+    { "time": 74.800000000, "duration": 7.200000000, "confidence": 1.0, "label": "E", "value": 5 },
+    { "time": 82.000000000, "duration": 6.400000000, "confidence": 1.0, "label": "F", "value": 6 },
+    { "time": 88.400000000, "duration": 6.800000000, "confidence": 1.0, "label": "E", "value": 5 },
+    { "time": 95.200000000, "duration": 13.800000000, "confidence": 1.0, "label": "D", "value": 4 },
+    { "time": 109.000000000, "duration": 12.600000000, "confidence": 1.0, "label": "A", "value": 1 },
+    { "time": 121.600000000, "duration": 8.400000000, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 130.000000000, "duration": 5.000000000, "confidence": 1.0, "label": "C", "value": 3 },
+    { "time": 135.000000000, "duration": 8.600000000, "confidence": 1.0, "label": "B", "value": 2 },
+    { "time": 143.600000000, "duration": 6.400000000, "confidence": 1.0, "label": "C", "value": 3 },
+    { "time": 150.000000000, "duration": 13.200000000, "confidence": 1.0, "label": "D", "value": 4 },
+    { "time": 163.200000000, "duration": 29.800000000, "confidence": 1.0, "label": "G", "value": 7 }
+  ]
+}
+]
+}

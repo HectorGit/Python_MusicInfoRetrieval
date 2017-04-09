@@ -1,0 +1,34 @@
+How Pymir achieves chord detection:
+
+a) Source in Pitch.py contains a method that computes the chroma from the spectrum. 
+
+chroma(spectrum)
+
+A chroma vector/pitch histogram is created by 
+
+converting the frequencies found in the spectrum into MIDI values, and then counting these values into 12 different pitch classes (by using the mod operator to determine which pitch class a MIDI value belongs to).
+
+The chroma vectors are normalized and then divided by the maximum value to achieve vectors that are close to profiles Pymir uses for 24 different keys.
+
+For example, the key of C minor has the following vector in it's profile:[1,0,0,1,0,0,0,1,0,0,0,0]
+
+-----
+getChord(chroma)
+
+The getChord method uses the chroma generated for the spectrum of a frame.
+It goes through the dictionary of chords (which contains binary vectors as shown above).
+
+It then tries to determine the cosine similarity between the chroma vector obtained and the profiles in the dictionary. It then picks the chord that had a greater similarity score.
+
+Cosine similarity is based on the idea of determining the direction of two vectors. If their direction is the same, the cosine similarity is 1. If they are at 90 degrees,  then their cosine similarity is 0. It is expressed as the division of the dot product of the vectors, by the multliplication of their magnitudes.
+
+
+
+
+
+
+
+
+
+
+

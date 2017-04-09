@@ -1,0 +1,6 @@
+pymir -> onsets
+         chords 
+
+librosa -> beats (?) /examples -> resturns and puts it into a csv file.
+
+shunfuBeat detect -> beats

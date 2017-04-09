@@ -1,0 +1,13 @@
+
+---------Implementation of a classifier with Support Vector Machine---------------
+
+Total number of instances: 300
+Num Instances of the training set : 180
+Num Intances of the testing set : 120
+
+ a   b   c  <-- classified as
+[30  5 10] | a = blues
+[ 5 25  5] | b = jazz
+[ 8  0 32] | c = rock
+
+Accuracy: 0.62 (+/- 0.14)

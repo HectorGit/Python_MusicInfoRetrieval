@@ -23,7 +23,7 @@ class Melody():
 			ratios[k] = f_and_amp[k][0]/f_and_amp[0][0];
 		
 		#trying to get this played into a file - must use sequence in mir.py file.
-		seed = mir.Sinusoid(freq = -22000, duration = 0.09);
+		seed = mir.Sinusoid(freq = 0, duration = 0.09);
 		sequence = mir.Sequence(seed);
 		
 		for i in range(0,len(list_of_MIDI_values)):
@@ -38,9 +38,10 @@ class Melody():
 			
 			for k in range(0,len(ratios)):
 				if ((ratios[k]*f) >= 500.0):
-					sinTemp = mir.Sinusoid(freq = ratios[k]*f, duration = 0.09, amp = f_and_amp[k][1]);
+					
+					sinTemp = mir.Sinusoid(freq = ratios[k]*f, duration = 0.09, amp = 0.5*f_and_amp[k][1]);
 				else:
- 					sinTemp = mir.Sinusoid(freq = 0, duration = 0.09, amp = f_and_amp[k][1]);
+ 					sinTemp = mir.Sinusoid(freq = 0, duration = 0.09, amp = 0);
 
 				mixture = mir.Mixture(mixture,sinTemp);
 			

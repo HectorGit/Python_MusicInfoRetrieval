@@ -1,0 +1,13 @@
+
+---------Implementation of a classifier with Gaussian Naive Bayes---------------
+
+Total number of instances: 300
+Num Instances of the training set : 180
+Num Intances of the testing set : 120
+
+ a  b  c <-- classified as
+[29  4 12] | a = blues
+[ 0 24 11] | b = jazz
+[ 2  1 37] | c = rock
+
+Accuracy: 0.73 (+/- 0.22)

@@ -1,0 +1,6 @@
+-----No.1 - Gloria in Excelsis Deo -----------------------------------------------
+f_measure for Segmentino: 0.074074
+f_measure for Segmenter : 0.153846
+------No.2 - Rondo Alla Turca------------------------------------------------------
+f_measure for Segmentino: 0.156863
+f_measure for Segmenter: 0.354839

@@ -1,0 +1,32 @@
+Series {
+  -> input: SoundFileSource {filename="q2baudiofiles/metal1.wav" inSamples = 1024}
+  -> MixToMono
+  -> Fanout {
+      -> Series {
+		-> shift: ShiftInput {winSize = (2 * inSamples)}
+		-> Windowing {type = "Hanning"}
+        -> Spectrum
+        -> PowerSpectrum {spectrumType = "magnitude"}
+		-> Centroid
+		-> Memory {memSize = 20}
+		-> Mean
+		-> freq: FlowToControl
+
+      }
+      -> Series {
+        -> Fanout {
+		
+			-> Series {
+			  -> SineSource { frequency = ((input/israte * 0.5) * freq/value)  }
+			  -> Gain { gain = 0.1 }
+			}
+		
+			-> Gain { gain = 0.2 }
+
+        }
+        -> AudioSink
+
+      }
+  }
+  + done = (input/hasData == false)
+}

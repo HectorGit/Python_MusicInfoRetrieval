@@ -10,69 +10,33 @@ import matplotlib.pyplot as plt
 class mainProg1():
 	
 	def main():
-	
-		#---------plotting with self implemented DFT-----------------------------------#
-		#------------------------------------------------------------------------------#
-		#------------------------------------------------------------------------------#
-	
-		#PART A - test with harmonically related sinusoids.
-		sine1 = mir.Sinusoid(amp = 1,freq = 2000.0,phase = 0);
-		sine2 = mir.Sinusoid(amp = 0.5,freq = 4000.0, phase = np.pi/4);
-		sine3 = mir.Sinusoid(amp = 0.25,freq = 8000.0, phase = np.pi/2);
-		signal = mir.Mixture(sine1,sine2,sine3);
-		#PART A - test with harmonically related sinusoids.
+		#-----IMPLEMENTED----#
+		
+		Fs = 44100;
+		sizeOfFFT = 1024; #size of fft ( k = N , in this case)
+		sizeOfBin = Fs/sizeOfFFT;
+		fundamental1 = 128*sizeOfBin;
+		fundamental2 = 130.5*sizeOfBin;
 
-		#PART B - test with sinusoid exactly at a Bin.
-		#signal = mir.Sinusoid(freq = 50.0*100.227272727); #100.227 is the calculates size
-		                                                   # of a single bin in Hz
-		#PART B - test with sinusoid exactly at a Bin.
+		#PART A - fundamental at freq bin
+		sine1 = mir.Sinusoid(amp = 1,freq = fundamental1,phase = 0, duration = 0.001);
+		sine2 = mir.Sinusoid(amp = 0.5,freq = 2*fundamental1, phase = np.pi/4, duration = 0.001);
+		sine3 = mir.Sinusoid(amp = 0.25,freq = 3*fundamental1, phase = np.pi/8, duration = 0.001);
+		signal1 = mir.Mixture(sine1,sine2,sine3);
+		methodsForFFT.dftByHector(sizeOfFFT,signal1,sizeOfBin);
+		#PART A - fundamental at freq bin
 		
-		#PART C - test with sinusoid between Bins.
-		#signal = mir.Sinusoid(freq = 50.5*100.227272727); #100.227 is the calculates size
-		                                                   # of a single bin in Hz
-		#PART C - test with sinusoid between Bins.
+		#PART B - fundamental between freq bin
+		sine4 = mir.Sinusoid(amp = 1,freq = fundamental2,phase = 0, duration = 0.001);
+		sine5 = mir.Sinusoid(amp = 0.5,freq = fundamental2*2, phase = np.pi/4, duration = 0.001);
+		sine6 = mir.Sinusoid(amp = 0.25,freq = fundamental2*3, phase = np.pi/8, duration = 0.001);
+		signal2 = mir.Mixture(sine4,sine5,sine6);
+		methodsForFFT.dftByHector(sizeOfFFT,signal2,sizeOfBin);
+		#PART B - fundamental between freq bin
 		
-		factor = 100; #this reduces the size of the DFT to a fraction of the length of 
-					  #the input
-		inputSamples = signal.data;		
-	
-		sizeOfFFT = len(inputSamples)/factor; #size of fft ( k = N , in this case)
-		numberOfBins = sizeOfFFT/2;
-
-		#PART A - test with harmonically related sinusoids.
-		methodsForFFT.dftByHector(factor,numberOfBins,signal,inputSamples);
-		#PART A - test with harmonically related sinusoids.
-
-		#PART B - test with sinusoid exactly at a Bin.
-		#methodsForFFT.dftByHector(factor,numberOfBins,signal,inputSamples);
-		#PART B - test with sinusoid exactly at a Bin.
-		
-		#PART C - test with sinusoid between Bins.
-		#methodsForFFT.dftByHector(factor,numberOfBins,signal,inputSamples);
-		#PART C - test with sinusoid between Bins.
-		
-		#----------------'plotting with library function for DFT'----------------------#
-		#------------------------------------------------------------------------------#
-		#------------------------------------------------------------------------------#
-
-		freq = np.fft.fft(inputSamples,sizeOfFFT)/numberOfBins;#/len(inputSamples);
-		real_part = np.real(freq);
-		imag_part = np.imag(freq);
-		
-		magn_spectrum = np.absolute(freq);
-
-		
-		phase_spectrum = np.zeros(numberOfBins,);
-		for i in range (0,numberOfBins):
-			phase_spectrum[i] = np.arctan2(imag_part[i],real_part[i]);
-		
-		lin_space = np.linspace(0,(44100)/2,numberOfBins);
-
-		#plt.stem(lin_space, magn_spectrum[:numberOfBins],'r');
-		#plt.stem(lin_space, phase_spectrum[:numberOfBins],'b');
-		
-		#plt.show();
-		
+		#-----LIBRARY----#
+		methodsForFFT.plotWithLibraryFFT(sizeOfFFT, signal1);
+		methodsForFFT.plotWithLibraryFFT(sizeOfFFT, signal2);
 		return 0;
 		
 

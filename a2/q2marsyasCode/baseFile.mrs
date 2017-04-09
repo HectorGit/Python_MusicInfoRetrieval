@@ -1,5 +1,5 @@
 Series {
-  -> input: SoundFileSource {filename="wav_files/qbhexamplesB.wav" inSamples = 1024}
+  -> input: SoundFileSource {filename="wav_files/hectorHigh.wav" inSamples = 1024}
   -> MixToMono
   -> Fanout {
       -> Series {
@@ -10,6 +10,7 @@ Series {
 		-> Centroid
 		-> Memory {memSize = 20}
 		-> Mean
+		-> CsvSink { filename = "hectorHighCentroid.csv"}
 		-> freq: FlowToControl
 
       }
@@ -18,14 +19,14 @@ Series {
 		
 			-> Series {
 			  -> SineSource { frequency = ((input/israte * 0.5) * freq/value)  }
-			  -> Gain { gain = 0.1 }
+			  -> Gain { gain = 0.2 }
 			}
 		
-			-> Gain { gain = 0.1 }
+			-> Gain { gain = 0.2 }
 
         }
         -> AudioSink
-		-> SoundFileSink { filename = "qbhexamples_centroid.wav" }
+		-> SoundFileSink { filename = "hectorHighCentroid.wav" }
 
       }
   }
